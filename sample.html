@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shreya Wadekar — Java Full-Stack Developer</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#0d6efd;
+      --muted:#6c757d;
+      --card-bg: #ffffff;
+      --glass: rgba(255,255,255,0.85);
+    }
+    html,body{height:100%;}
+    body {
+      font-family: "Rubik", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #f7f9ff 0%, #eef5ff 60%);
+      color: #212529;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4.5rem 1rem;
+    }
+    .hero-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250,250,255,0.85));
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(13, 110, 253, 0.08);
+      padding: 2rem;
+    }
+    .name {
+      font-size: 1.8rem;
+      font-weight:700;
+      letter-spacing: -0.5px;
+    }
+    .role {
+      color: var(--muted);
+      font-weight:600;
+    }
+
+    /* Skills */
+    .skill-badge{
+      border-radius: 999px;
+      padding: 0.45rem 0.8rem;
+      font-weight:600;
+      border: 1px solid rgba(13,110,253,0.12);
+      background: rgba(13,110,253,0.03);
+      margin: 0.25rem;
+      display:inline-block;
+    }
+
+    /* Projects */
+    .project-card {
+      border-radius: 14px;
+      overflow:hidden;
+      background: var(--card-bg);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .project-card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(2,6,23,0.08);
+    }
+    .project-img {
+      height: 160px;
+      object-fit: cover;
+      width:100%;
+      display:block;
+    }
+
+    /* About */
+    .about-me {
+      background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(245,247,255,0.9));
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.03);
+    }
+
+    /* Contact */
+    .form-control:focus{
+      box-shadow: 0 0 0 .15rem rgba(13,110,253,0.12);
+    }
+
+    footer {
+      padding: 2rem 0;
+      color: var(--muted);
+    }
+
+    /* Responsive tweaks */
+    @media(min-width: 992px){
+      .name{font-size: 2.4rem;}
+      .hero {padding: 6rem 1rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark" href="#">ShreyaW</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-outline-primary btn-sm" href="#" id="downloadResume">Resume</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card p-4 p-lg-5 d-lg-flex align-items-center gap-4">
+        <div class="me-lg-4 text-center text-lg-start" style="min-width:140px;">
+          <img src="image/my.jpg" alt="profile" class="rounded-circle border" width="140" height="140">
+        </div>
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <div class="name">Shreya Wadekar</div>
+              <div class="role">Java Full-Stack Developer • Front-End Enthusiast</div>
+              <div class="mt-3">
+                <span class="badge bg-light text-dark me-1">BCA • VNSGU (2025)</span>
+                <span class="badge bg-light text-dark">Real Estate Management System (PHP, MySQL)</span>
+              </div>
+            </div>
+            <div class="text-end d-none d-lg-block">
+              <a href="#contact" class="btn btn-primary btn-lg">Hire Me</a>
+            </div>
+          </div>
+
+          <p class="mt-3 mb-0" style="color: #495057;">
+            I'm a Java full-stack developer with strong front-end skills (HTML, CSS, Bootstrap, JS). I build responsive web apps and clean UIs — currently polishing full-stack projects and seeking opportunities to collaborate.
+          </p>
+
+          <div class="mt-4">
+            <a href="#" class="me-3 text-decoration-none" aria-label="github"><i class="bi bi-github fs-5"></i> GitHub</a>
+            <a href="#" class="me-3 text-decoration-none" aria-label="linkedin"><i class="bi bi-linkedin fs-5"></i> LinkedIn</a>
+            <a href="#" class="text-decoration-none" aria-label="mail"><i class="bi bi-envelope fs-5"></i> Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT + SKILLS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h3 id="about">About Me</h3>
+          <div class="about-me mt-3">
+            <p><strong>Hello — I'm Shreya.</strong> I completed my Bachelor of Computer Application at VNSGU and will graduate in 2025. I enjoy building user-friendly front-ends and connecting them to robust Java backends and databases. I contributed to a group Real Estate Management System using PHP, MySQL, Java, HTML, and CSS.</p>
+
+            <ul>
+              <li>Languages: Java, PHP, JavaScript, SQL, C</li>
+              <li>Databases: MySQL</li>
+              <li>Tools & Frameworks: Bootstrap, Git, Maven (for Java projects)</li>
+            </ul>
+
+            <div class="mt-3">
+              <a class="btn btn-outline-primary btn-sm" href="#projects">View Projects</a>
+              <a class="btn btn-outline-secondary btn-sm ms-2" href="#">Download CV</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <h3 id="skills">Skills</h3>
+          <div class="mt-3">
+            <!-- Skill badges -->
+            <span class="skill-badge">HTML</span>
+            <span class="skill-badge">CSS</span>
+            <span class="skill-badge">Bootstrap</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">Java</span>
+            <span class="skill-badge">PHP</span>
+            <span class="skill-badge">MySQL</span>
+            <span class="skill-badge">Git</span>
+            <span class="skill-badge">REST APIs</span>
+
+            <h5 class="mt-4">Skill Levels</h5>
+            <div class="mt-2">
+              <label class="form-label small">Front-end (HTML/CSS/Bootstrap/JS)</label>
+              <div class="progress mb-3" style="height:10px;">
+                <div class="progress-bar" role="progressbar" style="width:85%">85%</div>
+              </div>
+
+              <label class="form-label small">Java / Backend</label>
+              <div class="progress mb-3" style="height:10px;">
+                <div class="progress-bar bg-success" role="progressbar" style="width:75%">75%</div>
+              </div>
+
+              <label class="form-label small">Database (MySQL)</label>
+              <div class="progress mb-0" style="height:10px;">
+                <div class="progress-bar bg-info" role="progressbar" style="width:70%">70%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="py-5 bg-transparent">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 id="projects">Projects</h3>
+        <small class="text-muted">Click a card for more details</small>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card p-0 shadow-sm">
+            <img src="https://via.placeholder.com/600x400.png?text=Real+Estate+System" alt="Real Estate" class="project-img">
+            <div class="p-3">
+              <h5 class="mb-1">Real Estate Management System</h5>
+              <p class="small text-muted mb-2">Team project (PHP, MySQL, Java). Property listing, admin panel, user auth.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="badge bg-light text-dark">PHP</span>
+                  <span class="badge bg-light text-dark">MySQL</span>
+                </div>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projModal" data-proj="Real Estate Management System|Built a multi-user property management system using PHP/MySQL. Features: property CRUD, search, filters, admin approval.|Images & repo link here">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card p-0 shadow-sm">
+            <img src="https://via.placeholder.com/600x400.png?text=Portfolio+Site" alt="Portfolio" class="project-img">
+            <div class="p-3">
+              <h5 class="mb-1">Personal Portfolio</h5>
+              <p class="small text-muted mb-2">This portfolio (HTML, Bootstrap, JS) — responsive and accessible.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="badge bg-light text-dark">HTML</span>
+                  <span class="badge bg-light text-dark">Bootstrap</span>
+                </div>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projModal" data-proj="Personal Portfolio|Responsive single-page portfolio built with Bootstrap. Clean code and mobile-first design.|Repo & live demo here">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card p-0 shadow-sm">
+            <img src="https://via.placeholder.com/600x400.png?text=Todo+App" alt="Todo" class="project-img">
+            <div class="p-3">
+              <h5 class="mb-1">Todo App (JS)</h5>
+              <p class="small text-muted mb-2">Single page app with local storage, search and filters.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="badge bg-light text-dark">JavaScript</span>
+                </div>
+                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#projModal" data-proj="Todo App|Lightweight todo app using vanilla JS and localStorage. Features: add, edit, delete, filter.|Source link">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- add more project cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT DETAILS MODAL -->
+  <div class="modal fade" id="projModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="projTitle">Project Title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body" id="projBody">
+          <p>Project description...</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#" id="projRepo" class="btn btn-outline-primary" target="_blank">Repository</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h3>Contact Me</h3>
+          <p class="text-muted">Want to work together or ask about a project? Send a message and I'll get back soon.</p>
+
+          <form id="contactForm" class="mt-3" novalidate>
+            <div class="mb-3">
+              <label class="form-label">Your name</label>
+              <input type="text" name="name" class="form-control" required minlength="2">
+              <div class="invalid-feedback">Please enter your name (2+ characters).</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea name="message" rows="5" class="form-control" required minlength="10"></textarea>
+              <div class="invalid-feedback">Message must be at least 10 characters.</div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <div id="formAlert" class="mt-3" style="display:none;"></div>
+          </form>
+        </div>
+
+        <div class="col-lg-6">
+          <h5>Get in touch</h5>
+          <p class="text-muted">Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+          <p class="text-muted">Phone: +91-XXXXXXXXXX (optional)</p>
+
+          <div class="mt-4">
+            <h6>Languages</h6>
+            <p class="small text-muted">English • Hindi • Gujarati • Marathi</p>
+
+            <h6 class="mt-3">Education</h6>
+            <p class="small text-muted">BCA — Veer Narmad South Gujarat University (VNSGU), 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-transparent">
+    <div class="container text-center">
+      <p class="mb-1">&copy; <span id="year"></span> Shreya Wadekar. All rights reserved.</p>
+      <small class="text-muted">Designed with ❤ • Java • Front-end: HTML/CSS/Bootstrap/JS</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS & dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Set year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Project modal: populate with dataset
+    var projModal = document.getElementById('projModal')
+    projModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget;
+      var raw = button.getAttribute('data-proj') || '';
+      // format: Title|Description|RepoLink
+      var parts = raw.split('|');
+      var title = parts[0] || 'Project';
+      var desc = parts[1] || 'Details coming soon.';
+      var repo = parts[2] || '#';
+
+      projModal.querySelector('.modal-title').textContent = title;
+      projModal.querySelector('#projBody').innerHTML = '<p>' + desc + '</p>';
+      projModal.querySelector('#projRepo').href = repo;
+      if(repo === '#') projModal.querySelector('#projRepo').style.display = 'none';
+      else projModal.querySelector('#projRepo').style.display = 'inline-block';
+    });
+
+    // Contact form validation + fake submit (since no backend)
+    (function(){
+      var form = document.getElementById('contactForm');
+      var alertBox = document.getElementById('formAlert');
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        if(!form.checkValidity()){
+          form.classList.add('was-validated');
+          return;
+        }
+
+        // Simulate sending (replace with actual API call)
+        var formData = new FormData(form);
+        var name = formData.get('name');
+
+        alertBox.style.display = 'block';
+        alertBox.className = 'alert alert-success';
+        alertBox.textContent = 'Thanks, ' + (name || '') + '! Your message was sent (demo).';
+
+        form.reset();
+        form.classList.remove('was-validated');
+
+        // hide after 5s
+        setTimeout(function(){ alertBox.style.display = 'none'; }, 5000);
+      }, false);
+    })();
+
+    // Download resume placeholder
+    document.getElementById('downloadResume').addEventListener('click', function(e){
+      // Replace '#' with your resume file path or link
+      e.preventDefault();
+      alert('Replace the resume link with your actual resume file (PDF).');
+    });
+  </script>
+</body>
+</html>

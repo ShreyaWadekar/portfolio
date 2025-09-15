@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinesh Portfolio</title>
+
+  <!-- Boxicons CDN -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    /* ----------------------------
+       RESET AND BASE STYLES
+    ---------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0e0e0e;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ----------------------------
+       HEADER
+    ---------------------------- */
+    .header {
+      width: 100%;
+      padding: 20px 50px;
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar a {
+      padding: 8px 12px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00ffff;
+    }
+
+    #menu-icon {
+      font-size: 28px;
+      color: #fff;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* ----------------------------
+       HOME SECTION
+    ---------------------------- */
+    section {
+      padding: 100px 50px;
+      min-height: 100vh;
+    }
+
+    .home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 150px;
+    }
+
+    .home h1 {
+      font-size: 36px;
+    }
+
+    .home h1 span {
+      color: #00ffff;
+    }
+
+    .text-animate h3 {
+      color: #00ffff;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .home p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .btn-box {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #00ffff;
+      color: #000;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00b3b3;
+      color: #fff;
+    }
+
+    .home-sci {
+      margin-top: 30px;
+    }
+
+    .home-sci a {
+      color: #00ffff;
+      font-size: 20px;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    .home-sci a:hover {
+      color: #fff;
+    }
+
+    /* ----------------------------
+       ABOUT SECTION
+    ---------------------------- */
+    .about {
+      text-align: center;
+    }
+
+    .about .heading {
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .about .heading span {
+      color: #00ffff;
+    }
+
+    .about-img {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .about-img img {
+      border-radius: 10px;
+      border: 4px solid #00ffff;
+    }
+
+    .about-content h3 {
+      color: #00ffff;
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .about-content p {
+      max-width: 600px;
+      margin: 10px auto 20px;
+      color: #ccc;
+    }
+
+    /* ----------------------------
+       EDUCATION SECTION
+    ---------------------------- */
+    .education .heading {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .education .heading span {
+      color: #00ffff;
+    }
+
+    .education-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .education-column {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .education-column .title {
+      font-size: 24px;
+      color: #00ffff;
+      margin-bottom: 20px;
+    }
+
+    .education-content {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .year {
+      color: #00ffff;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .education-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* ----------------------------
+       SKILLS SECTION
+    ---------------------------- */
+    .skills .heading {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .skills .heading span {
+      color: #00ffff;
+    }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .skills-column {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .skills-column .title {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-align: center;
+    }
+
+    .progress {
+      margin-bottom: 15px;
+    }
+
+    .progress h3 {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .bar {
+      background: #333;
+      height: 8px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: #00ffff;
+      width: 0%;
+      transition: width 1s ease-in-out;
+    }
+
+    /* ----------------------------
+       CONTACT SECTION
+    ---------------------------- */
+    .contact .heading {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .contact .heading span {
+      color: #00ffff;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .input-box {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .input-field {
+      flex: 1;
+      position: relative;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button.btn {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    /* ----------------------------
+       RESPONSIVE DESIGN
+    ---------------------------- */
+    @media (max-width: 768px) {
+      .navbar {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        display: none;
+        width: 200px;
+      }
+
+      .navbar.active {
+        display: flex;
+      }
+
+      #menu-icon {
+        display: block;
+      }
+
+      .skills-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#" class="logo">Dinesh</a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Hi, I'm <span>Dinesh Mahajan</span></h1>
+      <div class="text-animate">
+        <h3>.NET Developer</h3>
+      </div>
+      <p>I am a skilled Dot Net Fullstack Developer experienced in building scalable web applications using .NET, C#, ASP.NET Core, and SQL Server. I work with frontend technologies like HTML, CSS, JavaScript, and frameworks such as Angular or React to create responsive user interfaces.</p>
+      <div class="btn-box">
+        <a href="#" class="btn">Hire Me</a>
+        <a href="#" class="btn">Let's Talk</a>
+      </div>
+    </div>
+    <div class="home-sci">
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-linkedin'></i></a>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <h2 class="heading">About <span>Me</span></h2>
+    <div class="about-img">
+      <img src="https://via.placeholder.com/300x390" alt="Dinesh Photo">
+    </div>
+    <div class="about-content">
+      <h3>.NET Developer</h3>
+      <p>A passionate and skilled Frontend Developer with expertise in creating visually appealing, user-friendly, and responsive web interfaces. Proficient in HTML, CSS, JavaScript, and modern frameworks like React.js, Angular.</p>
+      <div class="btn-box">
+        <a href="#" class="btn">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="education" id="education">
+    <h2 class="heading">My <span>Journey</span></h2>
+    <div class="education-row">
+      <div class="education-column">
+        <h3 class="title">Education</h3>
+        <div class="education-content">
+          <div class="year"><i class='bx bx-calendar'></i> 2019 - 2020</div>
+          <h3>SSC</h3>
+          <p>I have completed my SSC from Dnyandip Madhyamik Vidyalay, Parola with 84%.</p>
+        </div>
+        <div class="education-content">
+          <div class="year"><i class='bx bx-calendar'></i> 2021 - 2022</div>
+          <h3>HSC</h3>
+          <p>I have completed my HSC from Kisaan College, Parola with 71%.</p>
+        </div>
+        <div class="education-content">
+          <div class="year"><i class='bx bx-calendar'></i> 2022 - 2025</div>
+          <h3>BCA</h3>
+          <p>I have completed my BCA from G.H. Raisoni College, Jalgaon with 7.83 CGPA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section class="skills" id="skills">
+    <h2 class="heading">My <span>Skills</span></h2>
+    <div class="skills-row">
+      <div class="skills-column">
+        <h3 class="title">Frontend Skills</h3>
+        <div class="progress"><h3>HTML <span>90%</span></h3><div class="bar"><span style="width:90%"></span></div></div>
+        <div class="progress"><h3>CSS <span>70%</span></h3><div class="bar"><span style="width:70%"></span></div></div>
+        <div class="progress"><h3>JavaScript <span>60%</span></h3><div class="bar"><span style="width:60%"></span></div></div>
+        <div class="progress"><h3>Python <span>80%</span></h3><div class="bar"><span style="width:80%"></span></div></div>
+      </div>
+
+      <div class="skills-column">
+        <h3 class="title">Backend Skills</h3>
+        <div class="progress"><h3>Java <span>70%</span></h3><div class="bar"><span style="width:70%"></span></div></div>
+        <div class="progress"><h3>C# <span>80%</span></h3><div class="bar"><span style="width:80%"></span></div></div>
+        <div class="progress"><h3>ASP.NET <span>70%</span></h3><div class="bar"><span style="width:70%"></span></div></div>
+        <div class="progress"><h3>SQL <span>80%</span></h3><div class="bar"><span style="width:80%"></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+    <form>
+      <div class="input-box">
+        <div class="input-field">
+          <input type="text" placeholder="Full Name" required>
+        </div>
+        <div class="input-field">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+      </div>
+      <div class="input-box">
+        <div class="input-field">
+          <input type="number" placeholder="Mobile Number" required>
+        </div>
+        <div class="input-field">
+          <input type="text" placeholder="Subject" required>
+        </div>
+      </div>
+      <div class="textarea-field">
+        <textarea cols="30" rows="6" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </section>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Toggle menu
+    let menu = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.navbar');
+
+    menu.onclick = () => {
+      navbar.classList.toggle('active');
+    };
+  </script>
+</body>
+</html>
